@@ -10,6 +10,8 @@
 
 ​        在上一篇[MVC与MVP]()中详细介绍了MVC与MVP之间的关联和区别，看了上一篇，相信大家对MVC和MVP都有了一定的认识。有了理论知识，下面让我们结合实际业务和代码来看看MVP 的应用。
 
+​	**文中的代码地址为：**[MvpDemo](https://github.com/ScWen7/MvpDemo)
+
 # 业务场景
 
 这里为了测试使用Mvp,使用了[干货集中营Api](http://gank.io/api)。
@@ -545,6 +547,8 @@ Presenter主要做了以下几件事情：
 
 ### 总结分析
 
+**代码地址：**[MvpDemo](https://github.com/ScWen7/MvpDemo)
+
 Mvp注重的是接口的使用，体现了Java类的继承性，多态性，很重要的一点就是方法的重写。
 
 MVP把activity作为了view层，通过代码也可以看到，整个activity没有任何和model层相关的逻辑代码，取而代之的是把代码放到了presenter层中，presenter获取了model层的数据之后，通过接口的形式将view层需要的数据返回给它就OK了，activity 完全不用理会数据是如何处理的。这样的好处是什么呢？
@@ -556,3 +560,9 @@ MVP把activity作为了view层，通过代码也可以看到，整个activity没
 3、View层与Model层交互需要通过Presenter层进行，这样v与m层级间的耦合性降低。
 
 4、通过这种分层处理，每一层的测试也相对简单，维护性更高。如果你需要测试一个http请求是否顺利，你不需要写一个activity，只需要写一个java类，实现对应的接口，presenter获取了数据自然会调用相应的方法，相应的，你也可以自己在presenter中mock数据，分发给view层，用来测试布局是否正确。
+
+# 下篇预告
+
+本文作  结合实际业务用代码提现 MVP 在项目中的使用 ,下一篇将使用到原理介绍一个依赖注入框架  **Dagger2**
+
+[Dagger2的使用](https://github.com/ScWen7/Blogs/blob/master/hwappstore4.md)
